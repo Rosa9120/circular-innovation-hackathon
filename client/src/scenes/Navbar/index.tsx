@@ -6,14 +6,14 @@ import PixIcon from "@mui/icons-material/Pix"
 
 const Navbar = () => {
   const { palette } = useTheme()
-  const [selected, setSelected] = useState<"dashboard" | "predictions">("dashboard")
+  const [selected, setSelected] = useState<"dashboard" | "performance">("dashboard")
 
   return (
     <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
       <FlexBetween gap="0.75rem">
         <PixIcon sx={{ fontSize: "28px" }} />
         <Typography variant="h4" fontSize="16px">
-          FinanceApp
+          Sampol
         </Typography>
       </FlexBetween>
       <FlexBetween gap="2rem">
@@ -23,8 +23,8 @@ const Navbar = () => {
           </Link>
         </Box>
         <Box>
-        <Link to="/" onClick={() => { setSelected("predictions") }} style={{ color: selected === "predictions" ? "inherit" : palette.grey[700], textDecoration: "inherit" }}>
-            Predictions
+        <Link to="/performance" onClick={() => { setSelected("performance") }} style={{ color: selected === "performance" ? "inherit" : palette.grey[700], textDecoration: "inherit" }}>
+            Performance
           </Link>
         </Box>
       </FlexBetween>
