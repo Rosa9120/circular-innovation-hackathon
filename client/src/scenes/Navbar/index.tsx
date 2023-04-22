@@ -6,7 +6,7 @@ import PixIcon from "@mui/icons-material/Pix"
 
 const Navbar = () => {
   const { palette } = useTheme()
-  const [selected, setSelected] = useState<"dashboard" | "performance">("dashboard")
+  const [selected, setSelected] = useState<"dashboard" | "performance" | "motors">("dashboard")
 
   return (
     <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
@@ -25,6 +25,11 @@ const Navbar = () => {
         <Box>
         <Link to="/performance" onClick={() => { setSelected("performance") }} style={{ color: selected === "performance" ? "inherit" : palette.grey[700], textDecoration: "inherit" }}>
             Performance
+          </Link>
+        </Box>
+        <Box>
+        <Link to="/motors" onClick={() => { setSelected("motors") }} style={{ color: selected === "motors" ? "inherit" : palette.grey[700], textDecoration: "inherit" }}>
+            Motors
           </Link>
         </Box>
       </FlexBetween>

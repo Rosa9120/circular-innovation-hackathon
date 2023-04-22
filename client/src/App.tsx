@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { toggleGemelos } from "./slices/gemelosSlice"
 import { toggleNoGemelos } from "./slices/noGemelosSlice"
 import { RootState } from "./main"
+import Motors from "./scenes/Motors"
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/performance" element={<Performance />} />
+              <Route path="/motors" element={<Motors />} />
             </Routes>
             
           </Box>
