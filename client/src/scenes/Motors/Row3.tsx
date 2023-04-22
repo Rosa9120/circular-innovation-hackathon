@@ -9,7 +9,7 @@ import { useState } from 'react'
 
 type Props = {}
 
-const Row2 = (props: Props) => {
+const Row3 = (props: Props) => {
   //const { data } = useGetKpisQuery()
   const gemelosValue = useSelector((state: RootState) => state.gemelos);
   const noGemelosValue = useSelector((state: RootState) => state.noGemelos);
@@ -129,7 +129,7 @@ const Row2 = (props: Props) => {
 
   return (
     <>
-      <DashboardBox gridArea="b">
+      <DashboardBox gridArea="c">
         <ResponsiveContainer width="100%" height="100%" >
           <LineChart
             width={500}
@@ -152,7 +152,7 @@ const Row2 = (props: Props) => {
             }}
           >
             <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem">
-              Rendimiento Motor 2
+              Rendimiento Motor 3
             </text>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" fontSize="1rem"/>
@@ -185,4 +185,4 @@ const Row2 = (props: Props) => {
   )
 }
 
-export default Row2
+export default Row3

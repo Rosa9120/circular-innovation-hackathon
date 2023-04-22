@@ -22,17 +22,17 @@ const Navbar = () => {
       </FlexBetween>
       <FlexBetween gap="2rem">
         <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
-          <Link to="/" onClick={() => { setSelected("dashboard") }} style={{ fontSize: '1.2rem', color: selected === "dashboard" ? palette.grey[800] : "inherit", textDecoration: "inherit" }}>
+          <Link to="/" onClick={() => { setSelected("dashboard") }} style={{ fontSize: '1.2rem', color: selected === "dashboard" ? palette.grey[700] : "inherit", textDecoration: "inherit" }}>
             Dashboard
           </Link>
         </Box>
         <Box>
-        <Link to="/performance" onClick={() => { setSelected("performance") }} style={{ fontSize: '1.2rem', color: selected === "performance" ? palette.grey[800] : "inherit", textDecoration: "inherit" }}>
+        <Link to="/performance" onClick={() => { setSelected("performance") }} style={{ fontSize: '1.2rem', color: selected === "performance" ? palette.grey[700] : "inherit", textDecoration: "inherit" }}>
             Performance
         </Link>
         </Box>
         <Box>
-        <Link to="/motors" onClick={() => { setSelected("motors") }} style={{ color: selected === "motors" ? "inherit" : palette.grey[700], textDecoration: "inherit" }}>
+        <Link to="/motors" onClick={() => { setSelected("motors") }} style={{fontSize: '1.2rem', color: selected === "motors" ? palette.grey[700] : "inherit", textDecoration: "inherit" }}>
             Motors
           </Link>
         </Box>
