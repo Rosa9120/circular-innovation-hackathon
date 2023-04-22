@@ -182,7 +182,7 @@ const Row1 = (props: Props) => {
 
       </DashboardBox2>
     </div>
-    <Box marginRight="5rem">
+    <Box >
       {isZoomed ? (
         <button className='resetButton' type="button" onClick={zoomOut}>Reset</button>
       ): null}
