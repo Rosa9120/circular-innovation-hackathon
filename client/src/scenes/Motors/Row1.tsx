@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material/styles'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../main'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {}
 
@@ -126,6 +127,7 @@ const Row1 = (props: Props) => {
     SetXDomainRight("");
   }
 
+  const navigate = useNavigate()
 
   return (
     <>
@@ -151,7 +153,7 @@ const Row1 = (props: Props) => {
               console.log(xDomainLeft + " " + xDomainRight)
             }}
           >
-            <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem">
+            <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem" onClick={() => (navigate("/Motors/1"))}>
               Rendimiento Motor 1
             </text>
             <CartesianGrid strokeDasharray="3 3" />

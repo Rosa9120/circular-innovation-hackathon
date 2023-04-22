@@ -72,10 +72,11 @@ const renderTooltipContent = (o) => {
   );
 };
 
-export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/percent-stacked-area-chart-pelcs';
+interface Props { 
+   gridArea : string
+}
 
-  render() {
+const AreaCharts = (props: Props) => {
     return (
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
@@ -101,4 +102,5 @@ export default class Example extends PureComponent {
       </ResponsiveContainer>
     );
   }
-}
+
+export default AreaCharts;

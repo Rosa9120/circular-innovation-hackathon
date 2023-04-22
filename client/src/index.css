@@ -69,10 +69,29 @@ body,
   z-index: 9999;
 }
 
+.botonExpandirRow4 {
+  position: absolute;
+  right: 5rem;
+  bottom: 1rem;
+  width: 72px;
+  height: 72px;
+  background-color: rgb(6, 1, 1);
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+
 .botonMas {
   font-size: 64px;
   color: white;
   position: relative;
   bottom: 2px;
   right: 1px;
+}
+
+text {
+  cursor: pointer;;
 }

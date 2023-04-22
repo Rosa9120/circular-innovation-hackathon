@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material/styles'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../main'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {}
 
@@ -29,43 +30,43 @@ const Row2 = (props: Props) => {
   const data = [
     {
       name: 'Page A',
-      uv: 4000,
-      pv: 2400,
+      uv: 4500,
+      pv: 2800,
       amt: 2400,
     },
     {
       name: 'Page B',
-      uv: 3000,
-      pv: 1398,
+      uv: 2400,
+      pv: 1900,
       amt: 2210,
     },
     {
       name: 'Page C',
-      uv: 2000,
-      pv: 9800,
+      uv: 1876,
+      pv: 3200,
       amt: 2290,
     },
     {
       name: 'Page D',
       uv: 2780,
-      pv: 3908,
+      pv: 1200,
       amt: 2000,
     },
     {
       name: 'Page E',
-      uv: 1890,
-      pv: 4800,
+      uv: 6890,
+      pv: 2800,
       amt: 2181,
     },
     {
       name: 'Page F',
-      uv: 2390,
-      pv: 3800,
+      uv: 2990,
+      pv: 6800,
       amt: 2500,
     },
     {
       name: 'Page G',
-      uv: 3490,
+      uv: 7090,
       pv: 4300,
       amt: 2100,
     },
@@ -126,6 +127,7 @@ const Row2 = (props: Props) => {
     SetXDomainRight("");
   }
 
+  const navigate = useNavigate()
 
   return (
     <>
@@ -151,7 +153,7 @@ const Row2 = (props: Props) => {
               console.log(xDomainLeft + " " + xDomainRight)
             }}
           >
-            <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem">
+            <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem" onClick={() => (navigate("/Motors/2"))}>
               Rendimiento Motor 2
             </text>
             <CartesianGrid strokeDasharray="3 3" />

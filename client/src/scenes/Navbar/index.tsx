@@ -6,7 +6,7 @@ import sampol from '../../assets/sampol.png';
 
 const Navbar = () => {
   const { palette } = useTheme()
-  const [selected, setSelected] = useState<"dashboard" | "performance" | "motors">("dashboard")
+  const [selected, setSelected] = useState<"dashboard" | "performance" | "motors">("performance")
 
   return (
     <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
@@ -21,21 +21,21 @@ const Navbar = () => {
         </Link>
       </FlexBetween>
       <FlexBetween gap="2rem">
-        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+        {/* <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
           <Link to="/" onClick={() => { setSelected("dashboard") }} style={{ fontSize: '1.2rem', color: selected === "dashboard" ? palette.grey[700] : "inherit", textDecoration: "inherit" }}>
             Dashboard
           </Link>
-        </Box>
+        </Box> */}
         <Box>
         <Link to="/performance" onClick={() => { setSelected("performance") }} style={{ fontSize: '1.2rem', color: selected === "performance" ? palette.grey[700] : "inherit", textDecoration: "inherit" }}>
             Performance
         </Link>
         </Box>
-        <Box>
+        {/* <Box>
         <Link to="/motors" onClick={() => { setSelected("motors") }} style={{fontSize: '1.2rem', color: selected === "motors" ? palette.grey[700] : "inherit", textDecoration: "inherit" }}>
-            Motors
+            Motores
           </Link>
-        </Box>
+        </Box> */}
       </FlexBetween>
     </FlexBetween>
   )

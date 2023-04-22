@@ -11,6 +11,7 @@ import { toggleGemelos } from "./slices/gemelosSlice"
 import { toggleNoGemelos } from "./slices/noGemelosSlice"
 import { RootState } from "./main"
 import Motors from "./scenes/Motors"
+import MotorsExpanded from "./scenes/MotorsExpanded"
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/performance" element={<Performance />} />
               <Route path="/motors" element={<Motors />} />
+              <Route path="/motors/:id" element={<MotorsExpanded />} />
             </Routes>
             
           </Box>

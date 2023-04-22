@@ -136,7 +136,7 @@ const Row1 = (props: Props) => {
 
         <span className='botonMas'> + </span>
 
-      </div>
+    </div>
     <DashboardBox2 gridArea="a b c">
         <ResponsiveContainer width="100%" height="100%" >
           <LineChart
