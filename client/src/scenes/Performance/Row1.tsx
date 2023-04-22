@@ -5,6 +5,7 @@ import { useMemo, useState } from 'react'
 import { useTheme } from '@mui/material/styles'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../main'
+import { Box } from '@mui/material'
 
 type Props = {}
 
@@ -97,6 +98,33 @@ const Row1 = (props: Props) => {
     }
   }
 
+  const zoomIn = () => {
+    if(xDomainLeft === xDomainRight || xDomainRight === ""){
+      SetXDomainLeft("");
+      SetXDomainRight("");
+      return ;
+    }
+    let xDomainLeftCopy = xDomainLeft;
+    let xDomainRightCopy = xDomainRight;
+    const {reverseOrder} = getAxisYDomain(xDomainLeftCopy, xDomainRightCopy);
+
+    if (reverseOrder){
+      const aux = xDomainLeftCopy;
+      xDomainLeftCopy = xDomainRightCopy;
+      xDomainRightCopy = aux;
+    }
+
+    setIsZoomed(true);
+    SetXDomainLeft("");
+    SetXDomainRight("");
+  }
+
+  const zoomOut = () => {
+    setIsZoomed(false);
+    setVisibleData(data);
+    SetXDomainLeft("");
+    SetXDomainRight("");
+  }
 
   return (
     <>
@@ -106,7 +134,8 @@ const Row1 = (props: Props) => {
           <LineChart
             width={500}
             height={300}
-            data={data}
+            onMouseUp={zoomIn}
+            data={visibleData}
             margin={{
               top: 60,
               right: 30,
@@ -126,22 +155,21 @@ const Row1 = (props: Props) => {
               Rendimiento medio del Sistema
             </text>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis dataKey="name" fontSize="1rem"/>
+            <YAxis domain={[0, 10000]} fontSize="1rem" />
             <Tooltip />
             <Legend />
             {
-              gemelosValue ? <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+              gemelosValue ? <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={3} activeDot={{ r: 8 }} />
                            : <Line type="monotone" dataKey="" stroke="" />
             }
             {
-              noGemelosValue ? <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+              noGemelosValue ? <Line type="monotone" dataKey="uv" stroke="#82ca9d" strokeWidth={3} />
                              : <Line type="monotone" dataKey="" stroke="" />
             }
             {
               xDomainLeft && xDomainRight ? (
                 <ReferenceArea 
-                  yAxisId="1"
                   opacity={0.2}
                   x1={xDomainLeft}
                   x2={xDomainRight}
@@ -154,6 +182,12 @@ const Row1 = (props: Props) => {
 
       </DashboardBox2>
     </div>
+    <Box marginRight="5rem">
+      {isZoomed ? (
+        <button className='resetButton' type="button" onClick={zoomOut}>Reset</button>
+      ): null}
+    </Box>
+
     </>
   )
 }
