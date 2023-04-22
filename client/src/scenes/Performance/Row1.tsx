@@ -155,16 +155,16 @@ const Row1 = (props: Props) => {
               Rendimiento medio del Sistema
             </text>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis domain={[0, 10000]} />
+            <XAxis dataKey="name" fontSize="1rem"/>
+            <YAxis domain={[0, 10000]} fontSize="1rem" />
             <Tooltip />
             <Legend />
             {
-              gemelosValue ? <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+              gemelosValue ? <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={3} activeDot={{ r: 8 }} />
                            : <Line type="monotone" dataKey="" stroke="" />
             }
             {
-              noGemelosValue ? <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+              noGemelosValue ? <Line type="monotone" dataKey="uv" stroke="#82ca9d" strokeWidth={3} />
                              : <Line type="monotone" dataKey="" stroke="" />
             }
             {
