@@ -162,7 +162,9 @@ const Row1 = (props: Props) => {
             <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem">
               Rendimiento medio del Sistema
             </text>
-
+            <Tooltip
+              contentStyle={{ fontSize: 25 }} // Esto aumentará el tamaño de fuente del tooltip
+              />
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" fontSize="1.33rem"/>
             <YAxis domain={[0, 10000]} fontSize="1.33rem" />

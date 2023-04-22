@@ -48,6 +48,9 @@ const Row1 = (props: Props) => {
                 <stop offset="95%" stopColor={palette.primary[300]} stopOpacity={0} />
               </linearGradient>
             </defs>
+            <Tooltip
+              contentStyle={{ fontSize: 25 }} // Esto aumentará el tamaño de fuente del tooltip
+              />
             <XAxis dataKey="name" tickLine={false} style={{ fontSize: "10px" }} axisLine={{ strokeWidth: "0" }} />
             <YAxis tickLine={false} style={{ fontSize: "10px" }} axisLine={{ strokeWidth: "0" }} domain={[8000, 23000]} />
             <Tooltip />

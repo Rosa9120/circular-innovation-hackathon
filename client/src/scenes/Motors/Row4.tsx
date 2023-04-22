@@ -156,6 +156,9 @@ const Row4 = (props: Props) => {
             <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem" onClick={() => (navigate("/Motors/4"))}>
               Rendimiento Motor 4
             </text>
+            <Tooltip
+              contentStyle={{ fontSize: 25 }} // Esto aumentará el tamaño de fuente del tooltip
+              />
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" fontSize="1rem"/>
             <YAxis domain={[0, 10000]} fontSize="1rem" />
