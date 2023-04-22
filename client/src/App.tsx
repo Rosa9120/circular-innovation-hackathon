@@ -24,13 +24,20 @@ function App() {
           <CssBaseline />
           <Box width="100%" height="100%" padding="1rem 2rem 6rem 2rem">
             <Navbar />
-       
-            <Box width="100%" margin="2rem 1rem 0rem 1rem">
-              <input type="checkbox" name="gemelos" checked={gemelosValue} onChange={() => dispatch(toggleGemelos())} />
-              <span>Modelo ML</span>
-              <input type="checkbox" name="noGemelos" checked={noGemelosValue} onChange={() => dispatch(toggleNoGemelos())} />
-              <span>Modelo Actual</span>
-            </Box>
+            <div className="contenedorCentrado">
+              <div className='contenedorFlexFiltros'>
+                  <div style={{ display:'flex', justifyContent: 'center', gap: '1rem' }} >
+                    <input type="checkbox" name="gemelos" style={{ transform: 'scale(2)' }} checked={gemelosValue}  onChange={() => dispatch(toggleGemelos())} />
+                    <span style={{ fontSize: '1.2rem' }}>Modelo ML</span>
+                  </div>
+                  <div style={{ display:'flex', justifyContent: 'center', gap: '1rem' }} >
+                    <input type="checkbox" name="noGemelos" style={{ transform: 'scale(2)' }} checked={noGemelosValue} onChange={() => dispatch(toggleNoGemelos())} />
+                    <span style={{ fontSize: '1.2rem' }}>Modelo Actual</span>
+                  </div>
+              </div>
+            </div>
+            
+ 
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/performance" element={<Performance />} />
