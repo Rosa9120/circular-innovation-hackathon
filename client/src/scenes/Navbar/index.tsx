@@ -2,7 +2,7 @@ import { Box, Typography, useTheme } from "@mui/material"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import FlexBetween from "../../components/FlexBetween"
-import PixIcon from "@mui/icons-material/Pix"
+import sampol from '../../assets/sampol.png';
 
 const Navbar = () => {
   const { palette } = useTheme()
@@ -11,21 +11,25 @@ const Navbar = () => {
   return (
     <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
       <FlexBetween gap="0.75rem">
-        <PixIcon sx={{ fontSize: "28px" }} />
-        <Typography variant="h4" fontSize="16px">
-          Sampol
-        </Typography>
+      <Link to="/performance" onClick={() => { setSelected("performance") }} style={{ fontSize: '1.2rem', color: selected === "performance" ? palette.grey[800] : "inherit", textDecoration: "inherit" }}>
+        <FlexBetween gap="0.75rem">
+          <img src={sampol} alt="Logo de sampol" style={{width: '2.5rem', height: '2.5rem'}} />
+          <Typography variant="h4" fontSize="2rem">
+            Sampol
+          </Typography>
+          </FlexBetween>
+        </Link>
       </FlexBetween>
       <FlexBetween gap="2rem">
         <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
-          <Link to="/" onClick={() => { setSelected("dashboard") }} style={{ color: selected === "dashboard" ? "inherit" : palette.grey[700], textDecoration: "inherit" }}>
+          <Link to="/" onClick={() => { setSelected("dashboard") }} style={{ fontSize: '1.2rem', color: selected === "dashboard" ? palette.grey[800] : "inherit", textDecoration: "inherit" }}>
             Dashboard
           </Link>
         </Box>
         <Box>
-        <Link to="/performance" onClick={() => { setSelected("performance") }} style={{ color: selected === "performance" ? "inherit" : palette.grey[700], textDecoration: "inherit" }}>
+        <Link to="/performance" onClick={() => { setSelected("performance") }} style={{ fontSize: '1.2rem', color: selected === "performance" ? palette.grey[800] : "inherit", textDecoration: "inherit" }}>
             Performance
-          </Link>
+        </Link>
         </Box>
       </FlexBetween>
     </FlexBetween>

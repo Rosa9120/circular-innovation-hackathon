@@ -151,6 +151,7 @@ const Row1 = (props: Props) => {
             }
           </LineChart>
         </ResponsiveContainer>
+
       </DashboardBox2>
     </div>
     </>
