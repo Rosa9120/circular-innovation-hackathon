@@ -29,43 +29,43 @@ const Row2 = (props: Props) => {
 
   const data = [
     {
-      name: 'Page A',
+      name: '14 Enero',
       uv: 4500,
       pv: 2800,
       amt: 2400,
     },
     {
-      name: 'Page B',
+      name: '15 Enero',
       uv: 2400,
       pv: 1900,
       amt: 2210,
     },
     {
-      name: 'Page C',
+      name: '16 Enero',
       uv: 1876,
       pv: 3200,
       amt: 2290,
     },
     {
-      name: 'Page D',
+      name: '17 Enero',
       uv: 2780,
       pv: 1200,
       amt: 2000,
     },
     {
-      name: 'Page E',
+      name: '18 Enero',
       uv: 6890,
       pv: 2800,
       amt: 2181,
     },
     {
-      name: 'Page F',
+      name: '19 Enero',
       uv: 2990,
       pv: 6800,
       amt: 2500,
     },
     {
-      name: 'Page G',
+      name: '20 Enero',
       uv: 7090,
       pv: 4300,
       amt: 2100,

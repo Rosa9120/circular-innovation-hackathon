@@ -29,58 +29,49 @@ const Row3 = (props: Props) => {
 
   const data = [
     {
-      name: 'Page A',
+      name: '14 Enero',
       uv: 5000,
       pv: 2600,
       amt: 2400,
     },
     {
-      name: 'Page B',
+      name: '15 Enero',
       uv: 3890,
       pv: 1098,
       amt: 2210,
     },
     {
-      name: 'Page C',
+      name: '16 Enero',
       uv: 7000,
       pv: 6700,
       amt: 2290,
     },
     {
-      name: 'Page D',
+      name: '17 Enero',
       uv: 4880,
       pv: 2808,
       amt: 2000,
     },
     {
-      name: 'Page E',
+      name: '18 Enero',
       uv: 3490,
       pv: 1000,
       amt: 2181,
     },
     {
-      name: 'Page F',
+      name: '19 Enero',
       uv: 7690,
       pv: 3800,
       amt: 2500,
     },
     {
-      name: 'Page G',
+      name: '20 Enero',
       uv: 7690,
       pv: 6300,
       amt: 2100,
     },
   ];
   
-  // Función para obtener un número aleatorio entre dos valores
-  const getRandomNumber = (min: number, max: number): number => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
-  
-  // Randomizar los datos en el arreglo data
-  data.sort(() => Math.random() - 0.5);
-  
-  console.log(data);
   
 
   const [yDomainTop, SetYDomainTop] = useState(10000);
