@@ -16,6 +16,7 @@ body,
   display: flex !important; 
   padding: 4.5rem;
   justify-content: center;
+  position: relative;
 }
 
 .resetButton {
@@ -51,4 +52,27 @@ body,
   width: 100%;
   display: flex !important; 
   justify-content: center;
+}
+
+.botonExpandir {
+  position: absolute;
+  right: 8rem;
+  bottom: 10rem;
+  width: 72px;
+  height: 72px;
+  background-color: rgb(6, 1, 1);
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.botonMas {
+  font-size: 64px;
+  color: white;
+  position: relative;
+  bottom: 2px;
+  right: 1px;
 }

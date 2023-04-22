@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material/styles'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../main'
 import { Box } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {}
 
@@ -126,9 +127,16 @@ const Row1 = (props: Props) => {
     SetXDomainRight("");
   }
 
+  const navigate = useNavigate();
+
   return (
     <>
     <div className='contenedorFlex'>
+      <div className='botonExpandir' onClick={()=> (navigate("/Motors"))}>
+
+        <span className='botonMas'> + </span>
+
+      </div>
     <DashboardBox2 gridArea="a b c">
         <ResponsiveContainer width="100%" height="100%" >
           <LineChart
@@ -154,6 +162,7 @@ const Row1 = (props: Props) => {
             <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem">
               Rendimiento medio del Sistema
             </text>
+
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" fontSize="1rem"/>
             <YAxis domain={[0, 10000]} fontSize="1rem" />
