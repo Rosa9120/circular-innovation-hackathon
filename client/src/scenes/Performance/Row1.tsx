@@ -108,7 +108,7 @@ const Row1 = (props: Props) => {
             height={300}
             data={data}
             margin={{
-              top: 24,
+              top: 60,
               right: 30,
               left: 20,
               bottom: 5,
@@ -122,7 +122,7 @@ const Row1 = (props: Props) => {
               console.log(xDomainLeft + " " + xDomainRight)
             }}
           >
-            <text x="50%" y="15" textAnchor="middle" fontWeight="bold" fontSize={16}>
+            <text x="50%" y="45" textAnchor="middle" fontWeight="bold" fontSize="2rem">
               Rendimiento medio del Sistema
             </text>
             <CartesianGrid strokeDasharray="3 3" />
