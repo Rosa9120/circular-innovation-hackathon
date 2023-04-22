@@ -1,7 +1,7 @@
-import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis, Tooltip, LineChart, CartesianGrid, Legend, Line } from 'recharts'
+import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis, Tooltip, LineChart, CartesianGrid, Legend, Line, ReferenceArea } from 'recharts'
 import DashboardBox2 from '../../components/DashBoardBox2'
 import { useGetKpisQuery } from '../../state/api'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { useTheme } from '@mui/material/styles'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../main'
@@ -70,6 +70,34 @@ const Row1 = (props: Props) => {
     },
   ];
 
+  const [yDomainTop, SetYDomainTop] = useState(10000);
+  const [yDomainBottom, SetYDomainBottom] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [visibleData, setVisibleData] = useState(data);
+  const [xDomainLeft, SetXDomainLeft] = useState("");
+  const [xDomainRight, SetXDomainRight] = useState("");
+
+  const getAxisYDomain = (from : string, to : string) =>{
+    let reverseOrder = false;
+    const dataKeys = data.map((e) => e.name);
+    let fromIndex = dataKeys.indexOf(from);
+    let toIndex = dataKeys.indexOf(to);
+
+    if (fromIndex > toIndex){
+      const fromIndexCopy = fromIndex;
+      fromIndex = toIndex;
+      toIndex = fromIndexCopy;
+      reverseOrder = true;
+    }
+    const newData = data.slice(fromIndex, toIndex + 1)
+    setVisibleData(newData);
+
+    return {
+      reverseOrder: reverseOrder 
+    }
+  }
+
+
   return (
     <>
     <div className='contenedorFlex'>
@@ -84,6 +112,14 @@ const Row1 = (props: Props) => {
               right: 30,
               left: 20,
               bottom: 5,
+            }}
+            onMouseDown={(nextState) => {
+              SetXDomainLeft(nextState?.activeLabel || "")
+              //console.log(xDomainLeft)
+            }}
+            onMouseMove={(nextState) => {
+              xDomainLeft && SetXDomainRight(nextState?.activeLabel || "")
+              console.log(xDomainLeft + " " + xDomainRight)
             }}
           >
             <text x="50%" y="15" textAnchor="middle" fontWeight="bold" fontSize={16}>
@@ -101,6 +137,17 @@ const Row1 = (props: Props) => {
             {
               noGemelosValue ? <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                              : <Line type="monotone" dataKey="" stroke="" />
+            }
+            {
+              xDomainLeft && xDomainRight ? (
+                <ReferenceArea 
+                  yAxisId="1"
+                  opacity={0.2}
+                  x1={xDomainLeft}
+                  x2={xDomainRight}
+                  fill='#006dd9'
+                />
+              ) : null
             }
           </LineChart>
         </ResponsiveContainer>
